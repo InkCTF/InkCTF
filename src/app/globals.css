@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Classes */
+:root {
+  --font-freude: 'Freude', sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
+  --font-source-code-pro: var(--font-source-code-pro), monospace;
+}
+
+/* Base Styles */
+body {
+  @apply antialiased text-white bg-gradient-to-br from-gray-900 to-black;
+  font-family: var(--font-montserrat);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-freude);
+}
+
+code, pre {
+  font-family: var(--font-source-code-pro);
+}
+
+/* ink! Brand Colors */
+:root {
+  --ink-purple: #6E56CF;
+  --ink-purple-dark: #4D3B9E;
+  --ink-purple-light: #9E8CFC;
+  --ink-pink: #E86BDF;
+  --ink-pink-dark: #C83CBB;
+  --ink-pink-light: #FF9EF5;
+  --ink-indigo: #3B4FD9;
+  --ink-indigo-dark: #2A3AA0;
+  --ink-indigo-light: #6B7EFF;
+  --ink-teal: #14B8A6;
+  --ink-teal-dark: #0F8C7E;
+  --ink-teal-light: #5EEAD4;
+}
+
+/* Custom Gradients */
+.bg-ink-gradient-primary {
+  background: linear-gradient(135deg, var(--ink-purple) 0%, var(--ink-indigo) 100%);
+}
+
+.bg-ink-gradient-secondary {
+  background: linear-gradient(135deg, var(--ink-purple) 0%, var(--ink-pink) 100%);
+}
+
+.bg-ink-gradient-dark {
+  background: linear-gradient(135deg, #1F1F3B 0%, #121225 100%);
+}
+
+.bg-ink-gradient-card {
+  background: linear-gradient(135deg, rgba(110, 86, 207, 0.2) 0%, rgba(59, 79, 217, 0.2) 100%);
+}
+
+/* Curved Elements - avoiding straight lines as per brand guidelines */
+.ink-curve {
+  border-radius: 2rem;
+}
+
+.ink-curve-sm {
+  border-radius: 1rem;
+}
+
+.ink-curve-lg {
+  border-radius: 3rem;
+}
+
+/* Animations and Transitions */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.transition-ink {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(31, 31, 59, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ink-purple);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-purple-light);
+}
+
+/* Monaco Editor Overrides */
+.monaco-editor {
+  --vscode-editor-background: #121225 !important;
+  --vscode-editor-foreground: #E4E4E7 !important;
+  --vscode-editorLineNumber-foreground: #6E56CF !important;
+  --vscode-editorLineNumber-activeForeground: #E86BDF !important;
+  --vscode-editor-selectionBackground: rgba(110, 86, 207, 0.3) !important;
+  --vscode-editor-inactiveSelectionBackground: rgba(110, 86, 207, 0.2) !important;
+  --vscode-editor-selectionHighlightBackground: rgba(110, 86, 207, 0.15) !important;
+}
+
+.monaco-editor .margin {
+  background-color: #121225 !important;
+}
+
+/* Custom Components */
+@layer components {
+  .btn-ink {
+    @apply px-6 py-3 bg-ink-gradient-primary rounded-full text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-ink-secondary {
+    @apply px-6 py-3 bg-ink-gradient-secondary rounded-full text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .card-ink {
+    @apply bg-ink-gradient-card backdrop-blur-sm rounded-2xl border border-purple-500/20 shadow-lg p-6;
+  }
+  
+  .input-ink {
+    @apply bg-gray-800/50 border border-purple-500/30 rounded-xl px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all;
+  }
+}
+
+/* Dark Mode Optimizations */
+.dark-optimize {
+  color-scheme: dark;
+}
+
+/* Custom Font Loading Fallbacks */
+@font-face {
+  font-family: 'Freude';
+  src: url('/fonts/freude/Freude-Regular.woff2') format('woff2'),
+       url('/fonts/freude/Freude-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Squink Mascot Animation */
+.squink-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Ink Blob Animation */
+@keyframes blob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+/* Glow Effects */
+.glow-purple {
+  filter: drop-shadow(0 0 8px rgba(110, 86, 207, 0.5));
+}
+
+.glow-pink {
+  filter: drop-shadow(0 0 8px rgba(232, 107, 223, 0.5));
+}
+
+/* Console Output Styling */
+.console-text {
+  font-family: var(--font-source-code-pro);
+  line-height: 1.5;
+}
+
+.console-info {
+  color: #9E8CFC;
+}
+
+.console-error {
+  color: #FF5757;
+}
+
+.console-success {
+  color: #5EEAD4;
+}
+
+.console-command {
+  color: #FFD166;
+}

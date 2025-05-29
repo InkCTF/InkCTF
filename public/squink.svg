@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Squink - the ink! mascot -->
+  
+  <!-- Glowing background blob -->
+  <ellipse cx="100" cy="110" rx="70" ry="65" fill="#3B4FD9" opacity="0.1" filter="blur(15px)"/>
+  
+  <!-- Body -->
+  <path d="M100,45 C130,45 150,70 150,105 C150,140 130,165 100,165 C70,165 50,140 50,105 C50,70 70,45 100,45 Z" fill="#6E56CF"/>
+  
+  <!-- Highlight on body -->
+  <path d="M85,55 C110,55 125,75 125,100 C125,125 110,145 85,145 C60,145 45,125 45,100 C45,75 60,55 85,55 Z" fill="#9E8CFC" opacity="0.3"/>
+  
+  <!-- Tentacles -->
+  <path d="M70,140 C65,155 55,165 45,170 C40,172 38,165 42,160 C50,150 55,145 60,135" fill="none" stroke="#6E56CF" stroke-width="8" stroke-linecap="round"/>
+  
+  <path d="M60,145 C50,160 35,170 25,172 C20,173 18,165 22,160 C30,150 40,145 45,135" fill="none" stroke="#6E56CF" stroke-width="8" stroke-linecap="round"/>
+  
+  <path d="M130,140 C135,155 145,165 155,170 C160,172 162,165 158,160 C150,150 145,145 140,135" fill="none" stroke="#6E56CF" stroke-width="8" stroke-linecap="round"/>
+  
+  <path d="M140,145 C150,160 165,170 175,172 C180,173 182,165 178,160 C170,150 160,145 155,135" fill="none" stroke="#6E56CF" stroke-width="8" stroke-linecap="round"/>
+  
+  <path d="M85,155 C85,170 80,180 75,185 C70,190 65,185 70,180 C75,175 80,165 80,155" fill="none" stroke="#6E56CF" stroke-width="8" stroke-linecap="round"/>
+  
+  <path d="M115,155 C115,170 120,180 125,185 C130,190 135,185 130,180 C125,175 120,165 120,155" fill="none" stroke="#6E56CF" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="80" cy="90" rx="15" ry="17" fill="white"/>
+  <ellipse cx="120" cy="90" rx="15" ry="17" fill="white"/>
+  
+  <!-- Pupils -->
+  <g>
+    <ellipse cx="80" cy="90" rx="8" ry="9" fill="#3B4FD9">
+      <animate attributeName="cy" values="90;88;90" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="120" cy="90" rx="8" ry="9" fill="#3B4FD9">
+      <animate attributeName="cy" values="90;88;90" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  
+  <!-- Eyebrows -->
+  <path d="M65,75 C70,70 80,73 90,75" fill="none" stroke="#4D3B9E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M135,75 C130,70 120,73 110,75" fill="none" stroke="#4D3B9E" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Cheeks -->
+  <ellipse cx="70" cy="105" rx="8" ry="5" fill="#E86BDF" opacity="0.5"/>
+  <ellipse cx="130" cy="105" rx="8" ry="5" fill="#E86BDF" opacity="0.5"/>
+  
+  <!-- Mouth -->
+  <path d="M85,115 C95,125 105,125 115,115" fill="none" stroke="#4D3B9E" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Ink dots -->
+  <circle cx="95" cy="135" r="3" fill="#E86BDF"/>
+  <circle cx="105" cy="140" r="2" fill="#E86BDF"/>
+  <circle cx="90" cy="143" r="2" fill="#E86BDF"/>
+  
+  <!-- Floating animation for the whole squid -->
+  <animateTransform
+    attributeName="transform"
+    type="translate"
+    values="0 0; 0 -5; 0 0"
+    dur="6s"
+    repeatCount="indefinite"
+    additive="sum"
+  />
+</svg>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 80">
+  <!-- Polkadot Logo - Simplified version for dark backgrounds -->
+  
+  <!-- Main Circle Pattern -->
+  <g fill="#E6007A">
+    <!-- Center Circle -->
+    <circle cx="40" cy="40" r="12"/>
+    
+    <!-- Outer Circles -->
+    <circle cx="15" cy="40" r="8"/>
+    <circle cx="65" cy="40" r="8"/>
+    <circle cx="40" cy="15" r="8"/>
+    <circle cx="40" cy="65" r="8"/>
+    
+    <!-- Diagonal Circles -->
+    <circle cx="23" cy="23" r="6"/>
+    <circle cx="57" cy="23" r="6"/>
+    <circle cx="23" cy="57" r="6"/>
+    <circle cx="57" cy="57" r="6"/>
+  </g>
+  
+  <!-- Connecting Lines -->
+  <g stroke="#E6007A" stroke-width="2" fill="none">
+    <line x1="23" y1="23" x2="40" y2="40"/>
+    <line x1="57" y1="23" x2="40" y2="40"/>
+    <line x1="23" y1="57" x2="40" y2="40"/>
+    <line x1="57" y1="57" x2="40" y2="40"/>
+    <line x1="15" y1="40" x2="40" y2="40"/>
+    <line x1="65" y1="40" x2="40" y2="40"/>
+    <line x1="40" y1="15" x2="40" y2="40"/>
+    <line x1="40" y1="65" x2="40" y2="40"/>
+  </g>
+  
+  <!-- Polkadot Text -->
+  <g fill="white">
+    <path d="M100,30 h8 a12,12 0 0 1 0,24 h-8 v-24 z M108,34 h-4 v16 h4 a8,8 0 0 0 0,-16 z"/>
+    <path d="M125,30 a12,12 0 0 1 0,24 a12,12 0 0 1 0,-24 z M125,34 a8,8 0 0 0 0,16 a8,8 0 0 0 0,-16 z"/>
+    <path d="M140,30 h4 v20 h8 v4 h-12 z"/>
+    <path d="M160,30 h4 v24 h-4 z"/>
+    <path d="M170,30 h12 v4 h-8 v6 h6 v4 h-6 v6 h8 v4 h-12 z"/>
+    <path d="M190,30 h12 v4 h-8 v6 h6 v4 h-6 v10 h-4 z"/>
+    <path d="M210,30 a12,12 0 0 1 0,24 a12,12 0 0 1 0,-24 z M210,34 a8,8 0 0 0 0,16 a8,8 0 0 0 0,-16 z"/>
+    <path d="M230,30 h8 a12,12 0 0 1 0,24 h-8 v-24 z M238,34 h-4 v16 h4 a8,8 0 0 0 0,-16 z"/>
+    <path d="M250,30 h4 v20 h8 v4 h-12 z"/>
+  </g>
+</svg>
