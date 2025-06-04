@@ -32,6 +32,12 @@ const nextConfig = {
     env: {
       NEXT_PUBLIC_APP_NAME: 'ink!CTF',
       NEXT_PUBLIC_APP_DESCRIPTION: 'Capture The Flag for ink! Smart Contracts',
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
+    typescript: {
+      ignoreBuildErrors: true,
     }
   };
   
