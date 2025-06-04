@@ -192,7 +192,7 @@ export default function Home() {
                 <span className="text-sm text-white/60">Powered by</span>
                 <div className="relative w-24 h-8">
                   <Image
-                    src="/polkadot-logo.svg"
+                    src="/polkadot-new-dot-logo.png"
                     alt="Polkadot"
                     fill
                     className="object-contain"
@@ -334,7 +334,7 @@ export default function Home() {
           <div className="flex justify-center items-center gap-8 flex-wrap">
             <div className="relative w-40 h-16 animate-float-slow">
               <Image 
-                src="/polkadot-logo.svg" 
+                src="/polkadot-new-dot-logo.png" 
                 alt="Polkadot Logo" 
                 fill
                 className="object-contain drop-shadow-[0_0_10px_rgba(232,107,223,0.5)]"

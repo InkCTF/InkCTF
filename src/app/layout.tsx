@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, Montserrat, Source_Code_Pro } from 'next/font/google';
 import './globals.css';
 
-// Font configurations
 const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
@@ -21,13 +20,13 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-// Metadata for SEO
 export const metadata: Metadata = {
   metadataBase: new URL('https://ink-ctf-game.vercel.app'),
-  title: 'ink!CTF - Capture The Flag for ink! Smart Contracts',
+  title: 'ink!CTF',
   description: 'Learn smart contract security by exploiting vulnerabilities in ink! contracts in a gamified environment.',
   keywords: 'ink!, Polkadot, smart contracts, security, CTF, capture the flag, blockchain, Rust',
   authors: [{ name: 'ink! Alliance' }],
+  icons: [{ rel: 'icon', url: '/og-image.png' }],
   openGraph: {
     title: 'ink!CTF - Capture The Flag for ink! Smart Contracts',
     description: 'Learn smart contract security by exploiting vulnerabilities in ink! contracts in a gamified environment.',
@@ -63,7 +62,7 @@ export default function RootLayout({
         {/* Custom font for Freude - as it's not available on Google Fonts */}
         <link rel="stylesheet" href="/fonts/freude/freude.css" />
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/og-image.png" sizes="any" />
       </head>
       <body className="bg-gradient-to-br from-[#1a0b2e] via-[#2a1758] to-[#1a0b2e] text-white min-h-screen">
         {children}

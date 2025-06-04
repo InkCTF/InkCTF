@@ -38,7 +38,7 @@ const LevelConsole: React.FC<LevelConsoleProps> = ({
                 Exploit Editor
               </h3>
             </div>
-            <p className="text-[#c5bfff] mb-4 text-sm" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <p className="text-[#c5bfff] mt-10 text-sm mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Write your JavaScript code here to interact with the contract and exploit the vulnerability.
             </p>
             <div 
@@ -85,7 +85,7 @@ const LevelConsole: React.FC<LevelConsoleProps> = ({
           </div>
 
           {/* Console Output & Blockchain State Section */}
-          <div className="flex flex-col h-[600px] md:h-[700px] gap-6 md:gap-8">
+          <div className="flex flex-col h-[600px] md:h-[700px] gap-6 md:gap-8 mt-20">
             {/* Console Output */}
             <div className="flex-1 flex flex-col min-h-0">
               <div className="flex items-center mb-4">

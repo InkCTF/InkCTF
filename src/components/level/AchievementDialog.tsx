@@ -86,7 +86,7 @@ const AchievementDialog: React.FC<AchievementDialogProps> = ({
                       className="bg-[#1a0b2e]/50 p-4 rounded-[1.5rem] border border-[#6e56cf]/10 shadow-md flex items-start gap-4 opacity-60"
                     >
                       <div className="flex-shrink-0 mt-1 text-gray-600">
-                         {React.isValidElement(ach.icon) ? React.cloneElement(ach.icon, { className: "h-8 w-8 text-gray-600" }) : <Lock className="h-8 w-8 text-gray-600" />}
+                         {React.isValidElement<React.SVGProps<SVGSVGElement>>(ach.icon) ? React.cloneElement(ach.icon, { className: "h-8 w-8 text-gray-600" }) : <Lock className="h-8 w-8 text-gray-600" />}
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-400 text-lg">{ach.name}</h4>

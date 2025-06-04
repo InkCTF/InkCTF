@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Award, CheckCircle } from 'lucide-react';
 import { LevelData } from '@/types/level';
 import { UserStats, Achievement } from '@/types/achievements';
-import { achievements as allAchievements } from '@/data/achievements'; // Assuming allAchievements is the full list
+import { achievements as allAchievements } from '@/data/achievements';
 
 interface LevelHeaderProps {
   level: LevelData | null;

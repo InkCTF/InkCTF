@@ -3,7 +3,7 @@
 import React from 'react';
 import { LevelData } from '@/types/level';
 import { LightbulbIcon, PlayCircle, ChevronRight, FileText } from 'lucide-react';
-import * as Tabs from '@radix-ui/react-tabs'; // For potential future use within this tab if needed
+import * as Tabs from '@radix-ui/react-tabs';
 
 interface LevelDescriptionProps {
   level: LevelData | null;

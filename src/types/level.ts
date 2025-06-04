@@ -38,18 +38,19 @@ export interface LevelData {
 // Simulated blockchain state
 export interface BlockchainAccount {
   balance: number;
-  // Potentially other account-specific state like nonces, code (for EOAs vs contracts)
+  // TODO
+  // Potentially other account-specific state like nonces, code (for EOAs vs contracts) for future 
 }
 
 export interface BlockchainContract {
-  storage: Record<string, any>; // Simplified storage, can be more complex
+  storage: Record<string, any>;
   balance: number;
-  codeHash?: string; // Optional code hash
+  codeHash?: string; 
 }
 
 export interface BlockchainState {
-  accounts: Record<string, BlockchainAccount>; // Mapping of address to account state
-  contracts: Record<string, BlockchainContract>; // Mapping of address to contract state
+  accounts: Record<string, BlockchainAccount>; 
+  contracts: Record<string, BlockchainContract>;
 }
 
 // Console output message type

@@ -1,41 +1,6 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-
-/**
- * Type Definitions
- */
-
-// Level difficulty type
-export type LevelDifficulty = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
-
-// Level category type
-export type LevelCategory = 
-  | 'Introduction' 
-  | 'Access Control' 
-  | 'Randomness' 
-  | 'Reentrancy' 
-  | 'Storage' 
-  | 'Cross-Contract' 
-  | 'Arithmetic' 
-  | 'Logic'
-  | 'Cryptography';
-
-// Level data interface
-export interface LevelData {
-  id: number;
-  title: string;
-  description: string;
-  objectives: string[];
-  difficulty: LevelDifficulty;
-  category: LevelCategory;
-  contractCode: string;
-  hints: string[];
-  solution: string;
-  completed: boolean;
-}
-
-// Console output message type
-export type ConsoleMessageType = 'info' | 'error' | 'success' | 'command';
+import { ConsoleMessageType } from '@/types/level';
 
 // Console output interface
 export interface ConsoleMessage {

@@ -2,21 +2,16 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import Image from 'next/image'; // Keep for LevelHeader or other direct uses if any
-import Link from 'next/link'; // Keep for LevelHeader or other direct uses if any
 import * as Tabs from '@radix-ui/react-tabs';
 import * as Dialog from '@radix-ui/react-dialog';
-import { X, Coffee, Terminal, Code, FileText, BookOpen, Award, CheckCircle, LightbulbIcon, PlayCircle, ChevronLeft, ChevronRight, Star, Clock, Zap } from 'lucide-react';
+import { X, Coffee, Terminal, Code, FileText, BookOpen,LightbulbIcon } from 'lucide-react';
 
-// Import types
-import { LevelData, BlockchainState, ConsoleMessage, WalkthroughStep } from '@/types/level';
-import { UserStats, Achievement } from '@/types/achievement';
+import { LevelData, BlockchainState, ConsoleMessage} from '@/types/level';
+import { UserStats, Achievement } from '@/types/achievements';
 
-// Import data
 import { levelsData } from '@/data/levels';
 import { achievements as allAchievementsData } from '@/data/achievements';
 
-// Import components
 import LevelHeader from '@/components/level/LevelHeader';
 import LevelNavigation from '@/components/level/LevelNavigation';
 import LevelDescription from '@/components/level/LevelDescription';
@@ -27,7 +22,7 @@ import AchievementDialog from '@/components/level/AchievementDialog';
 import SuccessNotification from '@/components/level/SuccessNotification';
 import FailureNotification from '@/components/level/FailureNotification';
 
-// Simple Notification for New Achievements
+// Simple Notification for New Achievements for now
 interface NewAchievementNotificationProps {
   achievement: Achievement | null;
   onClose: () => void;
@@ -135,10 +130,10 @@ export default function LevelPage() {
 
     // Level-specific solution checks
     switch (level.id) {
-      case 1: // Hello Squink!
+      case 1:
         if (userPattern.includes('claim_victory()')) success = true;
         break;
-      case 2: // Fallback
+      case 2:
         if (userPattern.includes('contribute({value:1})') && userPattern.includes('sendtransaction({value:1') && userPattern.includes('withdraw()')) {
           success = true;
           setBlockchainState(prev => ({
@@ -148,12 +143,12 @@ export default function LevelPage() {
           }));
         }
         break;
-      case 3: // Coin Flip
+      case 3:
         if (userPattern.includes('attacker.attack()') || (userPattern.includes('blockhash') && userPattern.includes('factor') && userPattern.includes('flip('))) {
              success = true; // Simplified for console simulation
         }
         break;
-      case 4: // Reentrancy
+      case 4:
         if (userPattern.includes('attacker.attack({value:1})') || (userPattern.includes('deposit({value:') && userPattern.includes('withdraw()') && (userPattern.includes('fallback()') || userPattern.includes('receive()')))) {
             success = true;
             setBlockchainState(prev => ({
@@ -163,12 +158,12 @@ export default function LevelPage() {
             }));
         }
         break;
-      case 5: // Storage Manipulation
-        if (userPattern.includes('contract.initialize()') && userPattern.includes('contract.set_value_at_index(0') ) { // Highly simplified
+      case 5:
+        if (userPattern.includes('contract.initialize()') && userPattern.includes('contract.set_value_at_index(0') ) { // Highly simplified for now
             success = true;
         }
         break;
-      case 6: // Cross-Contract Attack
+      case 6:
         if (userPattern.includes('trustedcontract.get_owner()') && userPattern.includes('vulnerablecontract.call_trusted_contract_get_secret(owneroftrustedcontract)')) {
             success = true;
         }
@@ -195,7 +190,7 @@ export default function LevelPage() {
     }
     const currentLevelData = levelsData.find(l => l.id === levelId);
     if (!currentLevelData) {
-      router.push('/404'); // Or some other error page
+      router.push('/404');
       return;
     }
     setLevel(currentLevelData);
@@ -224,7 +219,7 @@ export default function LevelPage() {
       loadedStats.levelStartTimes[levelId] = Date.now();
     }
     setUserStats(loadedStats);
-    if (!savedStatsRaw) { // Save initial stats if they didn't exist
+    if (!savedStatsRaw) { 
         localStorage.setItem('userStats', JSON.stringify(loadedStats));
     }
 
@@ -259,8 +254,8 @@ export default function LevelPage() {
     <div className="min-h-screen bg-gradient-to-br from-[#1a0b2e] via-[#2a1758] to-[#1a0b2e] text-white relative overflow-hidden">
       {/* Decorative elements from original design */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg className="absolute left-0 top-1/4 w-32 h-96 text-[#9e8cfc] opacity-20" viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,150 Q30,100 10,50 Q-10,0 30,0" stroke="currentColor" strokeWidth="8" fill="none" className="animate-wave-slow" /><path d="M10,300 Q40,250 20,200 Q0,150 40,100" stroke="currentColor" strokeWidth="6" fill="none" className="animate-wave-slow" /></svg>
-        <svg className="absolute right-0 top-1/3 w-32 h-96 text-[#e86bdf] opacity-20" viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100,100 Q70,150 90,200 Q110,250 70,300" stroke="currentColor" strokeWidth="8" fill="none" className="animate-wave-slow" /><path d="M90,50 Q60,100 80,150 Q100,200 60,250" stroke="currentColor" strokeWidth="6" fill="none" className="animate-wave-slow" /></svg>
+        {/* <svg className="absolute left-0 top-1/4 w-32 h-96 text-[#9e8cfc] opacity-20" viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,150 Q30,100 10,50 Q-10,0 30,0" stroke="currentColor" strokeWidth="8" fill="none" className="animate-wave-slow" /><path d="M10,300 Q40,250 20,200 Q0,150 40,100" stroke="currentColor" strokeWidth="6" fill="none" className="animate-wave-slow" /></svg>
+        <svg className="absolute right-0 top-1/3 w-32 h-96 text-[#e86bdf] opacity-20" viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100,100 Q70,150 90,200 Q110,250 70,300" stroke="currentColor" strokeWidth="8" fill="none" className="animate-wave-slow" /><path d="M90,50 Q60,100 80,150 Q100,200 60,250" stroke="currentColor" strokeWidth="6" fill="none" className="animate-wave-slow" /></svg> */}
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#6e56cf]/5 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] animate-blob"></div>
         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#e86bdf]/5 rounded-[30%_60%_70%_40%/50%_60%_30%_60%] animate-blob"></div>
       </div>

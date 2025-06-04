@@ -25,7 +25,7 @@ const LevelNavigation: React.FC<LevelNavigationProps> = ({
     if (currentLevelId < totalLevels) {
       onNavigate(`/levels/${currentLevelId + 1}`);
     } else {
-      onNavigate('/'); // Navigate to homepage if it's the last level
+      onNavigate('/'); // Navigate to homepage if it's on the last level
     }
   };
 
